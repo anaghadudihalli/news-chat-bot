@@ -1,26 +1,8 @@
 var app = angular.module('chatApp',['ngMaterial']);
 
-app.controller('chatController',function($scope){
+app.controller('chatController',function($scope, $sce){
 
-    $scope.messages = [
-        {	
-            sender:"BOT",
-            text: "What can I do for you?",
-            time: "1:12PM"
-        	
-        },
-        {   
-            sender:"USER",
-        	text:"What is 1+1?",
-            time:"1:13PM"
-        	 
-        },
-        {
-        	sender:"BOT",  
-        	text: "2",
-            time: "1:14PM"
-        }
-    ];
+    $scope.messages = [];   
     
 
     
@@ -38,5 +20,7 @@ app.controller('chatController',function($scope){
         exampleSocket.send($scope.userMessage);     //Sends user message     
         $scope.userMessage = "";        //Clear the messaging area
     };
+
+    $scope.trust = $sce.trustAsHtml;
 
 });

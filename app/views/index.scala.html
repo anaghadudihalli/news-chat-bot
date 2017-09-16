@@ -21,7 +21,7 @@
           <md-card style="max-width: 75% ; border-radius: 10px; padding: 10px; font-size: 14px;"
          ng-style="message.sender == 'BOT' ?
          {'background-color': '#ffcccc'} :
-         {'background-color': '#66ccff'}">
+         {'background-color': '#66ccff  '}">
           <span>
             
             {{message.text}}</span>
@@ -38,11 +38,11 @@
 	       <form flex="90" ng-submit="sendMessage()" layout="row">
 	            <md-input-container flex="100">
 	                <label>Message</label>
-	                <input ng-model="userMessage">
+	                <input ng-model="userMessage"> <!-- sync with this variable-->
 	            </md-input-container>
 	       </form>
 
-			<md-button flex="10" style="height: 100%; padding: 0px " class="md-icon-button " ng-click="sendMessage() ">
+			<md-button flex="10" style="height: 100%; padding: 0px " class="md-icon-button " ng-click="sendMessage() "> <!--Sends the message-->
                <md-icon style="height: 100%; padding: 0px; " md-svg-icon="/assets/images/ic_chat_48px.svg"></md-icon>
            </md-button>
        </md-card>
